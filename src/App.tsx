@@ -1,7 +1,9 @@
+import UserForm from "./components/UserForm";
+
 function App() {
   return (
     <>
-      <h1>Hola</h1>
+      <UserForm />
     </>
   );
 }

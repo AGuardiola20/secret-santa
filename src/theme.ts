@@ -5,7 +5,9 @@ export const lightTheme = {
     disabled: "#ADB3BC",
     background: "#FBFBFB",
     text: "#292929",
-    textSecondary: "#ADAAB5",
+    textSecondary: "#FFFFFF",
+    textTertiary: "#ADAAB5",
+    primaryHover: "#d13737",
   },
 };
 
@@ -16,7 +18,8 @@ export const darkTheme = {
     secondary: "#2E8BFF",
     disabled: "#FFC107",
     background: "#121212",
-    text: "#FFFFFF",
-    textSecondary: "#ADAAB5",
+    text: "#292929",
+    textSecondary: "#FFFFFF",
+    textTertiary: "#ADAAB5",
   },
 };
