@@ -1,10 +1,17 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.tsx'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import App from "./App.tsx";
+import { ThemeProvider } from "styled-components";
+import { lightTheme } from "./theme.ts";
+import GlobalStyle from "./GlobalStyles.ts";
 
-createRoot(document.getElementById('root')!).render(
+// TODO: Hay que cambiar el theme usando un context
+
+createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <App />
-  </StrictMode>,
-)
+    <ThemeProvider theme={lightTheme}>
+      <GlobalStyle />
+      <App />
+    </ThemeProvider>
+  </StrictMode>
+);
