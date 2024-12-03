@@ -57,7 +57,7 @@ const NewCodeScreen = () => {
       <Main>
         <Image src={Gifts} alt="Gifts image" />
         <Title>¡Ups! Pantalla en desarrollo...</Title>
-        <Text>No se le pagó lo suficiente a Andres 😅</Text>
+        <Text>No se le pagó lo suficiente a Andres y Xavi 😅</Text>
         <Line />
         <Btn
           text="Volver"

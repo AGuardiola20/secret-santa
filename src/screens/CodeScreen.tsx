@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useForm, SubmitHandler } from "react-hook-form";
 import Btn from "../components/Btn";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Container = styled.div`
   display: flex;
@@ -73,9 +73,12 @@ const CodeScreen = () => {
     formState: { errors },
   } = useForm<FormValues>();
 
+  const navigate = useNavigate();
+
   // TODO: Manejar la logica para validar codigo en la base de datos
   const onSubmit: SubmitHandler<FormValues> = (data) => {
-    console.log("Código enviado:", data.code);
+    console.log(data.code);
+    navigate("/user");
   };
 
   return (

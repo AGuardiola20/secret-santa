@@ -6,7 +6,6 @@ import { lightTheme } from "./theme.ts";
 import GlobalStyle from "./GlobalStyles.ts";
 
 // TODO: Hay que cambiar el theme usando un context
-
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ThemeProvider theme={lightTheme}>
