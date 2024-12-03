@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Rudolf from "../assets/imgs/Rudolph.svg";
 import Btn from "../components/Btn";
+import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
   display: flex;
@@ -36,6 +37,8 @@ const Line = styled.div`
 `;
 
 const SplashScreen = () => {
+  const navigate = useNavigate();
+
   return (
     <Container>
       <Main>
@@ -43,7 +46,11 @@ const SplashScreen = () => {
         <Title>Amigo Secreto</Title>
         <Line />
         <Text>Familia Guardiola y agregados</Text>
-        <Btn text="Iniciar" isPrimary={false} />
+        <Btn
+          text="Iniciar"
+          isPrimary={false}
+          onClick={() => navigate("/code")}
+        />
       </Main>
     </Container>
   );

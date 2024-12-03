@@ -1,10 +1,13 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import SplashScreen from "./screens/SplashScreen";
 
 function App() {
   return (
-    <>
-      <SplashScreen />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<SplashScreen />} />
+      </Routes>
+    </Router>
   );
 }
 
