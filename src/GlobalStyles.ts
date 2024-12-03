@@ -3,7 +3,7 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
   body {
   margin: 0;
-  padding: 20px;
+  padding: 0;
   background-color: ${({ theme }) => theme.colors.background};
 }
 h1,
@@ -20,6 +20,7 @@ button {
   font-family: "Parkinsans", sans-serif;
   color: ${({ theme }) => theme.colors.text};
 }
+
 `;
 
 export default GlobalStyle;

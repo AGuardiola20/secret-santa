@@ -1,9 +1,9 @@
-import UserForm from "./components/UserForm";
+import SplashScreen from "./screens/SplashScreen";
 
 function App() {
   return (
     <>
-      <UserForm />
+      <SplashScreen />
     </>
   );
 }
