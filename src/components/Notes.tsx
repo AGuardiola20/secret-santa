@@ -33,6 +33,10 @@ const Container = styled.div`
      height: 15px;
      background-color: #555; /* Color del pincho */
     }
+
+    @media (max-width: 768px) {
+    display: none;
+    }
 `
 const Title = styled.h1`
   margin-top: 10px;
@@ -44,20 +48,25 @@ const Title = styled.h1`
 const Paragraph = styled.li`
   letter-spacing: 0.5px;
   font-size: 20px
-
-`
+  `
 
 type NotesProps = {
   nota: string[];
+  precio: number;
 };
 
-const Notes = ({ nota }: NotesProps) => {
+const Notes = ({ nota, precio }: NotesProps) => {
+  console.log(nota);
   return (
     <Container>
       <Title>Reglas del amigo secreto</Title>
-      {nota.map((item, index) => (
-        <Paragraph key={index}>{item}</Paragraph>
-      ))}
+     <Paragraph>El precio es de: {precio}</Paragraph>
+     {nota.map((nota, index) => {
+      return (
+        <Paragraph key={index}>{nota}</Paragraph>
+      )
+     })}
+    
     </Container>
   );
 };

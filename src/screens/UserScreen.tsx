@@ -15,7 +15,7 @@ const UserScreen = () => {
   return (
     <Container>
       <UserForm />
-      <Notes nota={['Precio minimo del regalo: 5000', 'Se debe entregar el regalo el 31 de diciembre']} />
+      <Notes nota={['Hola', 'Adios']} precio={5000} />
     </Container>
   );
 };
