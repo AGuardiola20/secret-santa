@@ -15,7 +15,8 @@ span,
 label, 
 input, 
 button,
-a {
+a,
+li {
   margin: 0;
   padding: 0;
   font-family: "Parkinsans", sans-serif;
