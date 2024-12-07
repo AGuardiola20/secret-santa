@@ -17,21 +17,21 @@ const Container = styled.div`
     transform: translateX(-50%);
     width: 15px;
     height: 15px;
-    background-color: #d32f2f; /* Color del alfiler */
-    border: 2px solid #990000; /* Borde oscuro para realismo */
-    border-radius: 50%; /* Forma circular */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Sombra para dar relieve */
+    background-color: ${({theme})=>theme.colors.primary}; 
+    border: 2px solid;
+    border-radius: 50%; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); 
     }
 
     &::after {
      content: '';
      position: absolute;
-     top: 0px; /* Línea que simula el pincho del alfiler */
+     top: 0px; 
      left: 50%;
      transform: translateX(-50%);
      width: 2px;
      height: 15px;
-     background-color: #555; /* Color del pincho */
+     background-color: #555; 
     }
 
     @media (max-width: 768px) {
@@ -39,7 +39,7 @@ const Container = styled.div`
     }
 `
 const Title = styled.h1`
-  margin-top: 10px;
+  margin-top: 20px;
   margin-bottom: 10px;
   letter-spacing: 0.3px;
   font-size: 30px;
