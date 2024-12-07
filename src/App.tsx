@@ -3,6 +3,7 @@ import SplashScreen from "./screens/SplashScreen";
 import CodeScreen from "./screens/CodeScreen";
 import NewCodeScreen from "./screens/NewCodeScreen";
 import UserScreen from "./screens/UserScreen";
+import RoomScreen from "./screens/RoomScreen";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/code" element={<CodeScreen />} />
         <Route path="/newCode" element={<NewCodeScreen />} />
         <Route path="/user" element={<UserScreen />} />
+        <Route path="/room" element={<RoomScreen />} />
       </Routes>
     </Router>
   );

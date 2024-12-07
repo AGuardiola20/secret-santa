@@ -1,42 +1,39 @@
 import { useState, useEffect } from "react";
-
-import { doc, getDoc } from "firebase/firestore";
+import { collection, query, where, getDocs } from "firebase/firestore";
 import { Room, User } from "../types/types";
 import { db } from "../firebaseConfig";
 
-const useFetchRoomUsers = (roomId: string) => {
-  const [users, setUsers] = useState<User[] | null>(null);
+export const useFetchRoomUsers = (code: string) => {
+  const [users, setUsers] = useState<User[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchRoomUsers = async () => {
-      setLoading(true);
-      setError(null);
+    const fetchUsers = async () => {
+      const roomsRef = collection(db, "rooms");
+      const q = query(roomsRef, where("code", "==", code));
 
       try {
-        const roomRef = doc(db, "rooms", roomId);
-        const roomDoc = await getDoc(roomRef);
-
-        if (roomDoc.exists()) {
-          const roomData = roomDoc.data() as Room;
+        const querySnapshot = await getDocs(q);
+        if (!querySnapshot.empty) {
+          const roomData = querySnapshot.docs[0].data() as Room;
           setUsers(roomData.users);
         } else {
-          setError("Room not found");
+          setUsers([]);
+          console.log("No room found for the code:", code);
         }
       } catch (err) {
-        setError(
-          err instanceof Error ? err.message : "Error fetching room data"
-        );
+        setError("Error fetching users");
+        console.error(err);
       } finally {
         setLoading(false);
       }
     };
 
-    fetchRoomUsers();
-  }, [roomId]);
+    if (code) {
+      fetchUsers();
+    }
+  }, [code]);
 
   return { users, loading, error };
 };
-
-export default useFetchRoomUsers;
